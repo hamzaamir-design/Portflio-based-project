@@ -1,21 +1,32 @@
 import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { Menu, X } from 'lucide-react'; 
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   const navLinkClass = ({ isActive }) =>
     `block py-2 pr-4 pl-3 duration-200 font-medium ${
-      isActive ? "text-orange-700" : "text-gray-700"
+      isActive ? 'text-orange-700' : 'text-gray-700'
     } hover:text-orange-700 lg:p-0`;
 
+  const handleLogin = () => {
+    setMenuOpen(false);
+    navigate('/login');
+  };
+
+  const handleGetStarted = () => {
+    setMenuOpen(false);
+    navigate('/register');
+  };
+
   return (
-    <header className="shadow sticky top-0 z-50 bg-white">
+    <header className="shadow sticky top-0 z-50 bg-white w-full">
       <nav className="px-4 lg:px-6 py-3 max-w-screen-xl mx-auto">
-        <div className="flex justify-between items-center">
+        <div className="flex flex-wrap justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img
@@ -34,7 +45,7 @@ export default function Header() {
           </button>
 
           {/* Desktop nav */}
-          <div className="hidden lg:flex space-x-8 items-center">
+          <div className="hidden lg:flex space-x-8 items-center ml-auto">
             <NavLink to="/" className={navLinkClass}>
               Home
             </NavLink>
@@ -49,20 +60,20 @@ export default function Header() {
             </NavLink>
           </div>
 
-          {/* Action buttons */}
-          <div className="hidden lg:flex items-center gap-2">
-            <Link
-              to="#"
+          {/* Action buttons (Desktop) */}
+          <div className="hidden lg:flex items-center space-x-4 pl-6">
+            <button
+              onClick={handleLogin}
               className="text-gray-800 hover:bg-gray-100 transition px-4 py-2 rounded-lg text-sm font-medium"
             >
               Log in
-            </Link>
-            <Link
-              to="#"
+            </button>
+            <button
+              onClick={handleGetStarted}
               className="bg-orange-700 text-white hover:bg-orange-800 transition px-4 py-2 rounded-lg text-sm font-medium"
             >
               Get started
-            </Link>
+            </button>
           </div>
         </div>
 
@@ -81,18 +92,18 @@ export default function Header() {
             <NavLink to="/github" className={navLinkClass} onClick={toggleMenu}>
               Github
             </NavLink>
-            <Link
-              to="#"
+            <button
+              onClick={handleLogin}
               className="text-gray-800 hover:bg-gray-100 transition px-4 py-2 rounded-lg text-sm font-medium"
             >
               Log in
-            </Link>
-            <Link
-              to="#"
+            </button>
+            <button
+              onClick={handleGetStarted}
               className="bg-orange-700 text-white hover:bg-orange-800 transition px-4 py-2 rounded-lg text-sm font-medium"
             >
               Get started
-            </Link>
+            </button>
           </div>
         )}
       </nav>

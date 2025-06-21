@@ -17,7 +17,7 @@ export default function About() {
               React development is carried out by passionate developers
             </h2>
             <p className="mt-6 leading-relaxed">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum omnis
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum omnis
               voluptatem accusantium nemo perspiciatis delectus atque autem! Voluptatum
               tenetur beatae unde aperiam, repellat expedita consequatur! Officiis id
               consequatur atque doloremque!
@@ -29,7 +29,7 @@ export default function About() {
             </p>
           </motion.div>
 
-          {/* Image Section */}
+          {/* Image Section with Beautiful Illustration */}
           <motion.div
             className="md:w-1/2"
             initial={{ opacity: 0, x: 50 }}
@@ -37,8 +37,8 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             <img
-              src="https://thumbs.dreamstime.com/z/person-working-computer-under-palm-tree-tropical-beach-image-presented-84599571.jpg?ct=jpeg"
-              alt="Working remotely"
+              src="https://images.pexels.com/photos/32634318/pexels-photo-32634318.jpeg"
+              alt="React Development Team"
               className="w-full rounded-lg shadow-lg"
               loading="lazy"
             />

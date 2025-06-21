@@ -3,8 +3,26 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 export default function Home() {
+  const features = [
+    {
+      title: "Fast Development",
+      description: "Build faster using modern tools and hot reload features React offers.",
+      image: "https://cdn-icons-png.flaticon.com/512/2784/2784489.png"
+    },
+    {
+      title: "Reusable Components",
+      description: "Create maintainable UIs by reusing modular components.",
+      image: "https://cdn-icons-png.flaticon.com/512/1047/1047711.png"
+    },
+    {
+      title: "Strong Community",
+      description: "Join a global community of developers building with React.",
+      image: "https://cdn-icons-png.flaticon.com/512/942/942748.png"
+    }
+  ];
+
   return (
-    <div className="w-full max-w-7xl mx-auto text-gray-800 dark:text-gray-100 dark:bg-gray-900">
+    <div className="w-full max-w-7xl mx-auto text-gray-800 dark:text-gray-100 dark:bg-gray-900 overflow-x-hidden">
       {/* Hero Section */}
       <aside className="relative overflow-hidden bg-gray-100 dark:bg-gray-800 rounded-lg sm:mx-16 mx-4 my-10 sm:py-20 py-14 px-4 shadow-lg">
         <div className="relative z-10 max-w-screen-xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between sm:px-6 lg:px-12">
@@ -49,9 +67,9 @@ export default function Home() {
             className="mb-8 lg:mb-0"
           >
             <img
-              src="https://www.shutterstock.com/shutterstock/photos/2135046005/display_1500/stock-photo-creative-summer-beach-on-laptop-with-blue-background-d-rendering-2135046005.jpg"
-              alt="React Creative"
-              className="w-full max-w-md mx-auto rounded-xl shadow-lg"
+              src="https://www.svgrepo.com/show/354259/react.svg"
+              alt="React Logo"
+              className="w-full max-w-md mx-auto rounded-xl shadow-lg bg-white p-6"
               loading="lazy"
             />
           </motion.div>
@@ -60,19 +78,23 @@ export default function Home() {
 
       {/* Features Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 sm:px-16 py-12">
-        {["Fast Development", "Reusable Components", "Strong Community"].map((title, i) => (
+        {features.map((feature, i) => (
           <motion.div
-            key={title}
+            key={feature.title}
             className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.2 }}
           >
-            <h3 className="text-xl font-semibold mb-2 text-orange-600">{title}</h3>
-            <p className="text-gray-600 dark:text-gray-300">
-              Learn how React can make your front-end development more powerful and scalable.
-            </p>
+            <img
+              src={feature.image}
+              alt={feature.title}
+              className="w-20 h-20 mx-auto mb-4"
+              loading="lazy"
+            />
+            <h3 className="text-xl font-semibold mb-2 text-orange-600">{feature.title}</h3>
+            <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
           </motion.div>
         ))}
       </div>
