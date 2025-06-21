@@ -66,10 +66,10 @@ export default function Footer() {
         </span>
         <div className="flex mt-4 md:mt-0 space-x-6 text-gray-500 dark:text-gray-400">
           <a href="https://github.com/hamzaamir-design" target="_blank" rel="noreferrer"><Github className="hover:text-black dark:hover:text-white" /></a>
-          <a href="https://facebook.com" target="_blank" rel="noreferrer"><Facebook className="hover:text-blue-600" /></a>
+          <a href="https://https://www.facebook.com/hamza.amir.hamza.892021.com" target="_blank" rel="noreferrer"><Facebook className="hover:text-blue-600" /></a>
           <a href="https://twitter.com" target="_blank" rel="noreferrer"><Twitter className="hover:text-sky-400" /></a>
           <a href="https://instagram.com" target="_blank" rel="noreferrer"><Instagram className="hover:text-pink-500" /></a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer"><Linkedin className="hover:text-blue-700" /></a>
+          <a href="https://https://www.linkedin.com/in/hamza-amir-57992232a/.com" target="_blank" rel="noreferrer"><Linkedin className="hover:text-blue-700" /></a>
         </div>
       </div>
     </footer>
